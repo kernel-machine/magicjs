@@ -6,6 +6,8 @@ Web application to automatically synchronize **LED colors** on the **Akai APC Mi
 
 It is not magic, but **magicjs**
 
+The application is available here: https://kernel-machine.github.io/magicjs/
+
 ## Description
 
 This software analyzes QLC+ workspace files (.qxw) and automatically configures MIDI values so that the Akai APC Mini MK2 controller LEDs display the same colors as the associated buttons in the Virtual Console graphical interface.
