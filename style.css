@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.description-section {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    margin-bottom: 35px;
+}
+
+.description-box h2 {
+    color: #667eea;
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.description-box p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.description-box p strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #667eea;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #667eea;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.param-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.param-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.param-group label {
+    color: #555;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.param-select {
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.param-select:hover {
+    border-color: #667eea;
+}
+
+.param-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.file-input-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-input-label {
+    display: block;
+    padding: 15px 20px;
+    background: #f0f0f0;
+    border: 2px dashed #667eea;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+.file-input-label:hover {
+    background: #e8e8ff;
+    border-color: #764ba2;
+}
+
+.file-input-label.dragover {
+    background: #e0e0ff;
+    border-color: #764ba2;
+}
+
+#fileInfo {
+    margin-top: 15px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    display: none;
+    color: #666;
+    font-size: 14px;
+}
+
+#fileInfo.show {
+    display: block;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    flex: 1;
+}
+
+.btn-process {
+    background: #667eea;
+    color: white;
+}
+
+.btn-process:hover:not(:disabled) {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-process:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-download {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-download:hover:not(:disabled) {
+    background: #38a169;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(72, 187, 120, 0.4);
+}
+
+.btn-download:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-reset {
+    background: #f56565;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #e53e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(245, 101, 101, 0.4);
+}
+
+.status-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    display: none;
+    font-size: 14px;
+}
+
+.status-message.show {
+    display: block;
+}
+
+.status-message.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.status-message.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #fc8181;
+}
+
+.status-message.info {
+    background: #bee3f8;
+    color: #2c5282;
+    border: 1px solid #90cdf4;
+}

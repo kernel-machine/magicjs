@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QXW File Processor - Akai APC Mini MK2 LED Sync</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 QXW File Processor</h1>
+
+        <!-- Description Section -->
+        <div class="section description-section">
+            <div class="description-box">
+                <h2>🎨 Akai APC Mini MK2 LED Synchronization</h2>
+                <p>
+                    This software automates the synchronization of <strong>LED colors</strong> on the 
+                    <strong>Akai APC Mini MK2</strong> controller with button colors in the <strong>QLC+ Virtual Console</strong>.
+                </p>
+                <p>
+                    Load your QLC+ workspace file (.qxw) and the system will automatically analyze the colors 
+                    of buttons in the graphical interface, finding the closest MIDI color match to configure 
+                    the controller LEDs with the same colors.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section: Upload File -->
+        <div class="section">
+            <div class="section-title">Load QXW File</div>
+            <div class="file-input-wrapper">
+                <input type="file" id="xmlFile" accept=".qxw" />
+                <label for="xmlFile" class="file-input-label" id="fileLabel">
+                    📁 Click to load a QXW file or drag it here
+                </label>
+            </div>
+            <div id="fileInfo">
+                <strong>File loaded:</strong> <span id="fileName"></span><br>
+                <strong>Size:</strong> <span id="fileSize"></span>
+            </div>
+        </div>
+
+        <!-- Section: MIDI Parameters -->
+        <div class="section">
+            <div class="section-title">MIDI Parameters Configuration</div>
+            <div class="param-container">
+                <div class="param-group">
+                    <label for="lowerParams">Disabled led state:</label>
+                    <select id="lowerParams" class="param-select">
+                        <option value="0">On 10% brightness</option>
+                        <option value="1">On 25% brightness</option>
+                        <option value="2">On 50% brightness</option>
+                        <option value="3">On 65% brightness</option>
+                        <option value="4">On 75% brightness</option>
+                        <option value="5">On 90% brightness</option>
+                        <option value="6" selected>On 100% brightness</option>
+                        <option value="7">Pulsing 1/16</option>
+                        <option value="8">Pulsing 1/8</option>
+                        <option value="9">Pulsing 1/4</option>
+                        <option value="10">Pulsing 1/2</option>
+                        <option value="11">Blinking 1/24</option>
+                        <option value="12">Blinking 1/16</option>
+                        <option value="13">Blinking 1/8</option>
+                        <option value="14">Blinking 1/4</option>
+                        <option value="15">Blinking 1/2</option>
+                    </select>
+                </div>
+                <div class="param-group">
+                    <label for="upperMonitorParams">Active led state:</label>
+                    <select id="upperMonitorParams" class="param-select">
+                        <option value="0">On 10% brightness</option>
+                        <option value="1">On 25% brightness</option>
+                        <option value="2">On 50% brightness</option>
+                        <option value="3">On 65% brightness</option>
+                        <option value="4">On 75% brightness</option>
+                        <option value="5">On 90% brightness</option>
+                        <option value="6">On 100% brightness</option>
+                        <option value="7">Pulsing 1/16</option>
+                        <option value="8">Pulsing 1/8</option>
+                        <option value="9">Pulsing 1/4</option>
+                        <option value="10">Pulsing 1/2</option>
+                        <option value="11" selected>Blinking 1/24</option>
+                        <option value="12">Blinking 1/16</option>
+                        <option value="13">Blinking 1/8</option>
+                        <option value="14">Blinking 1/4</option>
+                        <option value="15">Blinking 1/2</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Process File -->
+        <div class="section">
+            <div class="section-title">Process File</div>
+            <div class="button-group">
+                <button class="btn-process" id="processBtn" disabled>⚙️ Process</button>
+                <button class="btn-reset" id="resetBtn">🔄 Reset</button>
+            </div>
+        </div>
+
+        <!-- Section: Download File -->
+        <div class="section">
+            <div class="section-title">Download Result</div>
+            <button class="btn-download" id="downloadBtn" disabled>📥 Download Modified File</button>
+        </div>
+
+        <!-- Status Messages -->
+        <div id="statusMessage" class="status-message"></div>
+
+    </div>
+
+    <script src="colors.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
