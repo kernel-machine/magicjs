@@ -19,8 +19,6 @@ This software analyzes QLC+ workspace files (.qxw) and automatically configures 
 - Automatically configures MIDI parameters to light up the controller LEDs
 - Download the modified file ready to use
 
-This application replicates the functionality of `magic.py` entirely in the browser, with no backend or installation required. 
-
 ### What it does
 
 The system processes QXW files (QLC+ workspace) and for each button:
@@ -71,46 +69,6 @@ magicjs/
 5. Click "📥 Download Modified File" to save the processed file
 
 The downloaded file will have the suffix `_modified` (e.g., `workspace_modified.qxw`)
-
-## Implemented Functions
-
-### `euclideanDistance(color1, color2)`
-Calculates the Euclidean distance between two RGB colors in hex format
-
-### `findCloserColor(hexColor)`
-Finds the closest MIDI color in the `colors` array using Euclidean distance
-
-### `getBgColor(button)`
-Extracts the background color from an XML Button element
-
-### `processXmlFile(xmlContent, lowerParams, upperMonitorParams)`
-Main function that:
-- Parses the XML
-- Processes all Buttons
-- Modifies Input attributes according to the rules (using configurable parameters)
-- Serializes and returns the modified XML
-
-Parameters:
-- `xmlContent`: The XML file content to process
-- `lowerParams`: Value for LowerParams attribute (default: '6')
-- `upperMonitorParams`: Value for UpperParams and MonitorParams attributes (default: '11')
-
-## Technical Note
-
-The system uses:
-- `DOMParser` to parse XML
-- `XMLSerializer` to serialize modified XML
-- `FileReader` API to read files
-- `Blob` and `download` to save modified files
-
-Everything runs in the browser, with no need for a server or backend.
-
-## Technologies
-
-- Pure HTML5, CSS3, and JavaScript (Vanilla JS)
-- No dependencies or frameworks
-- Client-side only (no backend required)
-- Compatible with all modern browsers
 
 ## License
 
